@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerOne : Player
 {
     private Character character;
-    private MoveType currentMove;
+    private MoveData currentMove;
     private bool isReady;
 
     void Update()
@@ -45,7 +45,7 @@ public class PlayerOne : Player
         } 
     }
 
-    public MoveType GetCurrentMove()
+    public MoveData GetCurrentMove()
     {
         return currentMove;
     }

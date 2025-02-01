@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class Sandie : Character
 {
-    public Sandie() : base(2,2,2,20)
+    public Sandie() : base(2,5,2,20)
     {
     }
 
-    public override MoveType ExecuteHeavyUp()
+    public override MoveData ExecuteHeavyUp()
     {
-        return MoveType.Leech;
+        MoveData m = new MoveData(MoveType.Leech, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyForward()
+    public override MoveData ExecuteHeavyForward()
     {
-        return MoveType.Projectile;
+        MoveData m = new MoveData(MoveType.Projectile, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyDown()
+    public override MoveData ExecuteHeavyDown()
     {
-        return MoveType.HardThrow;
+        MoveData m = new MoveData(MoveType.HardThrow, 4, 0);
+        return m;
     }
 
 }
