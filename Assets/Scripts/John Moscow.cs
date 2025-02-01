@@ -9,19 +9,22 @@ public class JohnMoscow : Character
     {
     }
 
-    public override MoveType ExecuteHeavyUp()
+    public override MoveData ExecuteHeavyUp()
     {
-        return MoveType.HighJump;
+        MoveData m = new MoveData(MoveType.HighJump, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyForward()
+    public override MoveData ExecuteHeavyForward()
     {
-        return MoveType.SuperPunch;
+        MoveData m = new MoveData(MoveType.SuperPunch, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyDown()
+    public override MoveData ExecuteHeavyDown()
     {
-        return MoveType.Dodge;
+        MoveData m = new MoveData(MoveType.Dodge, 4, 0);
+        return m;
     }
 }
 

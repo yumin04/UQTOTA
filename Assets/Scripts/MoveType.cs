@@ -20,3 +20,16 @@ public enum MoveType
         HardThrow
     }
 
+public struct MoveData
+{
+    public MoveType x;
+    public int damage;
+    public int enemyStunTime;
+    public MoveData(MoveType x, int damage, int enemyStunTime)
+    {
+        this.x = x;
+        this.damage = damage;
+        this.enemyStunTime = enemyStunTime;
+    }
+}
+

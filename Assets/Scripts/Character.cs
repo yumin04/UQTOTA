@@ -17,31 +17,35 @@ public abstract class Character: MonoBehaviour
         HealthPoints.SetHP(healthPoint);
     }
     
-    public MoveType ExecuteLightUp()
+    public MoveData ExecuteLightUp()
     {
-        return MoveType.JumpAttack;
+        MoveData m = new MoveData(MoveType.JumpAttack, 4, 0);
+        return m;
     }
 
-    public MoveType ExecuteLightForward()
+    public MoveData ExecuteLightForward()
     {
-        return MoveType.Punch;
+        MoveData m = new MoveData(MoveType.Punch, 4, 0);
+        return m;
     }
 
-    public MoveType ExecuteLightDown()
+    public MoveData ExecuteLightDown()
     {
-        return MoveType.Throw;
+        MoveData m = new MoveData(MoveType.Throw, 4, 0);
+        return m;
     }
 
-    public MoveType ExecuteBlock()
+    public MoveData ExecuteBlock()
     {
-        return MoveType.Block;
+        MoveData m = new MoveData(MoveType.Block, 0, 0);
+        return m;
     }
 
-    public abstract MoveType ExecuteHeavyUp();
+    public abstract MoveData ExecuteHeavyUp();
 
-    public abstract MoveType ExecuteHeavyForward();
+    public abstract MoveData ExecuteHeavyForward();
 
 
-    public abstract MoveType ExecuteHeavyDown();
+    public abstract MoveData ExecuteHeavyDown();
 
 }

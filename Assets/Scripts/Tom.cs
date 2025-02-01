@@ -7,21 +7,23 @@ public class Tom : Character
     public Tom() : base(2,2,2,20)
     {
     }
-    public HP HealthPoints;
 
-    public override MoveType ExecuteHeavyUp()
+    public override MoveData ExecuteHeavyUp()
     {
-        return MoveType.Curse;
+        MoveData m = new MoveData(MoveType.Curse, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyForward()
+    public override MoveData ExecuteHeavyForward()
     {
-        return MoveType.Projectile;
+        MoveData m = new MoveData(MoveType.Projectile, 4, 0);
+        return m;
     }
 
-    public override MoveType ExecuteHeavyDown()
+    public override MoveData ExecuteHeavyDown()
     {
-        return MoveType.Earthquake;
+        MoveData m = new MoveData(MoveType.Earthquake, 4, 0);
+        return m;
     }
 }
 
