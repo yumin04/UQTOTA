@@ -8,4 +8,35 @@ public class Sandie : Character
     public int laserCooldown;
     public int leechCooldown;
     public int heavyThrowCooldown;
+
+    public MoveType ExecuteLightUp()
+    {
+        return MoveType.JumpAttack;
+    }
+
+    public MoveType ExecuteLightForward()
+    {
+        return MoveType.Punch;
+    }
+
+    public MoveType ExecuteLightDown()
+    {
+        return MoveType.Throw;
+    }
+
+    public MoveType ExecuteHeavyUp()
+    {
+        return MoveType.Leech;
+    }
+
+    public MoveType ExecuteHeavyForward()
+    {
+        return MoveType.Projectile;
+    }
+
+    public MoveType ExecuteHeavyDown()
+    {
+        return MoveType.HardThrow;
+    }
+
 }

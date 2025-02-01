@@ -9,7 +9,38 @@ public class Tom : Character
     public int earthquakeCooldown;
     public int spellCooldown;
 
+    public MoveType ExecuteLightUp()
+    {
+        return MoveType.JumpAttack;
+    }
 
+    public MoveType ExecuteLightForward()
+    {
+        return MoveType.Punch;
+    }
 
+    public MoveType ExecuteLightDown()
+    {
+        return MoveType.Throw;
+    }
 
+    public MoveType ExecuteHeavyUp()
+    {
+        return MoveType.Curse;
+    }
+
+    public MoveType ExecuteHeavyForward()
+    {
+        return MoveType.Projectile;
+    }
+
+    public MoveType ExecuteHeavyDown()
+    {
+        return MoveType.Earthquake;
+    }
 }
+
+
+
+
+

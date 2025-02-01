@@ -8,4 +8,37 @@ public class JohnMoscow : Character
     public int dodgeCooldown;
     public int highJumpCooldown;
     public int hardPunchCooldown;
+
+    
+
+    public MoveType ExecuteLightUp()
+    {
+        return MoveType.JumpAttack;
+    }
+
+    public MoveType ExecuteLightForward()
+    {
+        return MoveType.Punch;
+    }
+
+    public MoveType ExecuteLightDown()
+    {
+        return MoveType.Throw;
+    }
+
+    public MoveType ExecuteHeavyUp()
+    {
+        return MoveType.HighJump;
+    }
+
+    public MoveType ExecuteHeavyForward()
+    {
+        return MoveType.SuperPunch;
+    }
+
+    public MoveType ExecuteHeavyDown()
+    {
+        return MoveType.Dodge;
+    }
 }
+
