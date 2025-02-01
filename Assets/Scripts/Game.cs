@@ -7,12 +7,17 @@ public class Game : MonoBehaviour
     private Player player1;
     private Player player2;
 
-    private PlayerMoveKey? player1Input;
-    private PlayerMoveKey? player2Input;
-    // Update is called once per frame
+    private MoveData player1MoveData;
+    private MoveData player2MoveData;
+
+    void Start()
+    {
+        player1.SetCharacter(CharacterInfo.Jon);
+        player2.SetCharacter(CharacterInfo.Jon);
+    }
     void Update()
     {
-        player1Input = player1.GetUserInput();
-        player2Input = player2.GetUserInput();
+        player1MoveData = player1.GetMoveData();
+        player2MoveData = player2.GetMoveData();
     }
 }

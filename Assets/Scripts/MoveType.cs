@@ -20,7 +20,6 @@ public enum MoveType
         HardThrow,
         
     }
-
 public struct MoveData
 {
     public MoveType x;
@@ -42,5 +41,12 @@ public enum PlayerMoveKey
     HeavyDown,
     HeavyUp,
     Block
+}
+
+public enum CharacterInfo
+{
+    Jon,
+    Tom,
+    Sandie
 }
 

@@ -15,5 +15,8 @@ public abstract class Player : MonoBehaviour
     {
         this.userName = userName;
     }
-    public abstract PlayerMoveKey? GetUserInput();
+    public abstract void GetUserInput();
+    public abstract MoveData GetMoveData();
+    public abstract void SetCharacter(CharacterInfo c);
+    public abstract Character GetCharacter();
 }
