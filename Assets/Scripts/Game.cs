@@ -11,11 +11,13 @@ public class Game : MonoBehaviour
     private MoveData player1MoveData;
     private MoveData player2MoveData;
 
-    //void Start()
-    //{
-    //    player1.SetCharacter(CharacterInfo.Jon);
-    //    player2.SetCharacter(CharacterInfo.Jon);
-    //}
+    void Start()
+    {
+        player1 = new PlayerOne();
+        player2 = new PlayerTwo();
+        // player1.SetCharacter(CharacterInfo.Jon);
+        // player2.SetCharacter(CharacterInfo.Jon);
+    }
     //void Update()
     //{
     //    player1MoveData = player1.GetMoveData();
