@@ -1,1 +1,73 @@
 
+# Unity-generated files to ignore
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+.vs/
+.gradle/
+
+# JetBrains Rider plugin
+[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Visual Studio specific files
+.vs/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity-specific file types to ignore
+#*.pidb.meta
+#*.pdb.meta
+#*.mdb.meta
+
+# Unity crash reports
+sysinfo.txt
+
+# Build files (Android, iOS, etc.)
+*.apk
+*.aab
+*.unitypackage
+*.unitypackage.meta
+*.app
+
+# Crashlytics build properties
+crashlytics-build.properties
+
+# Ignore Addressable Asset System temporary files
+[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Ignore Packed AssetBundles
+#[Aa]ssets/[Ss]treamingAssets/aa.meta
+#[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Don't ignore these Unity files so they can be tracked:
+# Scenes and Prefabs
+#[Aa]ssets/Scenes/*.unity
+#[Aa]ssets/Prefabs/*.prefab
+
+# Ignore temporary files for packaging (only ignore if building and testing packages)
+[Aa]ssets/[Pp]ackages/*/package.json
+
+# Unity build directories
+#[Aa]ssets/[Bb]uild/ (if you're using custom build directories)
+
+# Keep Unity metadata files that need to be shared between team members
+#[Aa]ssets/**/*.meta
