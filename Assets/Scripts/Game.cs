@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    InputFieldHandler inputField;
-    private Player player1;
+    [SerializeField] public InputFieldHandler inputField;
+    [SerializeField] private Player player1;
     private Player player2;
 
     private MoveData player1MoveData;
