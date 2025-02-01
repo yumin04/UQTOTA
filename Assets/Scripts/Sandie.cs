@@ -4,37 +4,21 @@ using UnityEngine;
 
 public class Sandie : Character
 {
-    // Start is called before the first frame update
-    public int laserCooldown;
-    public int leechCooldown;
-    public int heavyThrowCooldown;
-
-    public MoveType ExecuteLightUp()
+    public Sandie() : base(2,2,2,20)
     {
-        return MoveType.JumpAttack;
     }
 
-    public MoveType ExecuteLightForward()
-    {
-        return MoveType.Punch;
-    }
-
-    public MoveType ExecuteLightDown()
-    {
-        return MoveType.Throw;
-    }
-
-    public MoveType ExecuteHeavyUp()
+    public override MoveType ExecuteHeavyUp()
     {
         return MoveType.Leech;
     }
 
-    public MoveType ExecuteHeavyForward()
+    public override MoveType ExecuteHeavyForward()
     {
         return MoveType.Projectile;
     }
 
-    public MoveType ExecuteHeavyDown()
+    public override MoveType ExecuteHeavyDown()
     {
         return MoveType.HardThrow;
     }
