@@ -1,42 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class JohnMoscow : ICharacter
+public class JohnMoscow : Character
 {
-    // Start is called before the first frame update
-    public int dodgeCooldown;
-    public int highJumpCooldown;
-    public int hardPunchCooldown;
-
-    
-
-    public MoveType ExecuteLightUp()
+    public JohnMoscow() : base(2,2,2,20)
     {
-        return MoveType.JumpAttack;
     }
 
-    public MoveType ExecuteLightForward()
-    {
-        return MoveType.Punch;
-    }
-
-    public MoveType ExecuteLightDown()
-    {
-        return MoveType.Throw;
-    }
-
-    public MoveType ExecuteHeavyUp()
+    public override MoveType ExecuteHeavyUp()
     {
         return MoveType.HighJump;
     }
 
-    public MoveType ExecuteHeavyForward()
+    public override MoveType ExecuteHeavyForward()
     {
         return MoveType.SuperPunch;
     }
 
-    public MoveType ExecuteHeavyDown()
+    public override MoveType ExecuteHeavyDown()
     {
         return MoveType.Dodge;
     }

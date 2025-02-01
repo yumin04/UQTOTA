@@ -4,37 +4,22 @@ using UnityEngine;
 
 public class Tom : Character
 {
-    // Start is called before the first frame update
-    public int curseCooldown;
-    public int earthquakeCooldown;
-    public int spellCooldown;
-
-    public MoveType ExecuteLightUp()
+    public Tom() : base(2,2,2,20)
     {
-        return MoveType.JumpAttack;
     }
+    public HP HealthPoints;
 
-    public MoveType ExecuteLightForward()
-    {
-        return MoveType.Punch;
-    }
-
-    public MoveType ExecuteLightDown()
-    {
-        return MoveType.Throw;
-    }
-
-    public MoveType ExecuteHeavyUp()
+    public override MoveType ExecuteHeavyUp()
     {
         return MoveType.Curse;
     }
 
-    public MoveType ExecuteHeavyForward()
+    public override MoveType ExecuteHeavyForward()
     {
         return MoveType.Projectile;
     }
 
-    public MoveType ExecuteHeavyDown()
+    public override MoveType ExecuteHeavyDown()
     {
         return MoveType.Earthquake;
     }
