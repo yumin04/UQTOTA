@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class PlayerTwo : Player
 {
-    public override void GetUserInput()
+    private string dataFromDatabase;
+    public override PlayerMoveKey? GetUserInput()
+    {
+        return PlayerMoveKey.Block;
+    }
+
+    public override void SetUserName(string userName)
+    {
+        base.SetUserName(userName);
+    }
+
+    private void GetDataFromDatabase()
     {
         
     }
+
 }

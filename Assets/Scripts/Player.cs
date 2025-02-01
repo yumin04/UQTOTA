@@ -4,5 +4,16 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour
 {
-    public abstract void GetUserInput();
+    private string userName;
+
+    public string GetUserName()
+    {
+        return userName;
+    }
+
+    public virtual void SetUserName(string userName)
+    {
+        this.userName = userName;
+    }
+    public abstract PlayerMoveKey? GetUserInput();
 }

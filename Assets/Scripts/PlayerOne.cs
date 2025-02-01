@@ -5,47 +5,62 @@ using UnityEngine;
 public class PlayerOne : Player
 {
     private Character character;
-    private MoveData currentMove;
+    private PlayerMoveKey currentMove;
     private bool isReady;
 
     void Update()
     {
         GetUserInput();
     }
-    public override void GetUserInput()
+    public override PlayerMoveKey? GetUserInput()
     {
-        if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.RightArrow))
+        while (true)
         {
-            currentMove = character.ExecuteLightForward();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            currentMove = character.ExecuteLightDown();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentMove = character.ExecuteLightUp();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            currentMove = character.ExecuteHeavyForward();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            currentMove = character.ExecuteHeavyDown();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            currentMove = character.ExecuteHeavyUp();
-            isReady = true;
-        } else if (Input.GetKeyDown(KeyCode.B))
-        {
-            currentMove = character.ExecuteBlock();
-            isReady = true;
-        } 
+            if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                currentMove = PlayerMoveKey.LightForward;
+                break;
+            }
+            if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                currentMove = PlayerMoveKey.LightDown;
+                break;
+            }
+            if (Input.GetKeyDown(KeyCode.L) && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                currentMove = PlayerMoveKey.LightUp;
+                break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                currentMove = PlayerMoveKey.HeavyForward;
+                break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                currentMove = PlayerMoveKey.HeavyDown;
+                break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.H) && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                currentMove = PlayerMoveKey.HeavyUp;
+                break;
+            }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                currentMove = PlayerMoveKey.Block;
+                break;
+            }    
+        }
+
+        return currentMove;
     }
 
-    public MoveData GetCurrentMove()
+    public PlayerMoveKey GetCurrentMove()
     {
         return currentMove;
     }
