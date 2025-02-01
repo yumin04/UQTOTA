@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerTwo : Player
 {
     private string dataFromDatabase;
-    public override PlayerMoveKey? GetUserInput()
+    private PlayerMoveKey currentInput;
+    private Character character;
+    public override void GetUserInput()
     {
-        return PlayerMoveKey.Block;
     }
 
     public override void SetUserName(string userName)
@@ -20,4 +21,19 @@ public class PlayerTwo : Player
         
     }
 
+    public override MoveData GetMoveData()
+    {
+        GetDataFromDatabase();
+        return new MoveData();
+    }
+
+    public override void SetCharacter(CharacterInfo c)
+    {
+        
+    }
+
+    public override Character GetCharacter()
+    {
+        return character;
+    }
 }
