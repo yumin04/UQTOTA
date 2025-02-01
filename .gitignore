@@ -59,8 +59,8 @@ crashlytics-build.properties
 
 # Don't ignore these Unity files so they can be tracked:
 # Scenes and Prefabs
-[Aa]ssets/Scenes/*.unity
-[Aa]ssets/Prefabs/*.prefab
+#[Aa]ssets/Scenes/*.unity
+#[Aa]ssets/Prefabs/*.prefab
 
 # Ignore temporary files for packaging (only ignore if building and testing packages)
 [Aa]ssets/[Pp]ackages/*/package.json
