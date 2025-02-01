@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c54f158a8fd42239e8ef6f8307d27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputField: {fileID: 776900694}
 --- !u!4 &2016571326
 Transform:
   m_ObjectHideFlags: 0
