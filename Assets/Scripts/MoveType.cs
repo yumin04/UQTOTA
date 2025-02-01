@@ -17,9 +17,9 @@ public enum MoveType
         Earthquake,
         SuperPunch,
         HighJump,
-        HardThrow
+        HardThrow,
+        
     }
-
 public struct MoveData
 {
     public MoveType x;
@@ -31,5 +31,22 @@ public struct MoveData
         this.damage = damage;
         this.enemyStunTime = enemyStunTime;
     }
+}
+public enum PlayerMoveKey
+{
+    LightForward,
+    LightDown,
+    LightUp,
+    HeavyForward,
+    HeavyDown,
+    HeavyUp,
+    Block
+}
+
+public enum CharacterInfo
+{
+    Jon,
+    Tom,
+    Sandie
 }
 

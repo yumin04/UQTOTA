@@ -6,10 +6,18 @@ public class Game : MonoBehaviour
 {
     private Player player1;
     private Player player2;
-    // Update is called once per frame
+
+    private MoveData player1MoveData;
+    private MoveData player2MoveData;
+
+    void Start()
+    {
+        player1.SetCharacter(CharacterInfo.Jon);
+        player2.SetCharacter(CharacterInfo.Jon);
+    }
     void Update()
     {
-        player1.GetUserInput();
-        player2.GetUserInput();
+        player1MoveData = player1.GetMoveData();
+        player2MoveData = player2.GetMoveData();
     }
 }
