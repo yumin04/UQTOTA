@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sandie : Character
+public class Sandie : ICharacter, MonoBehaviour
 {
     // Start is called before the first frame update
     public int laserCooldown;
