@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2c22b78-8e40-4c09-8d24-29cd1f52afb9" name="Changes" comment="" />
+    <list default="true" id="f2c22b78-8e40-4c09-8d24-29cd1f52afb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UQTOTA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UQTOTA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoveType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoveType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enums.cs.meta" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,6 +112,7 @@
       <workItem from="1738392175513" duration="397000" />
       <workItem from="1738441081949" duration="10663000" />
       <workItem from="1738452920309" duration="1081000" />
+      <workItem from="1738458833541" duration="3695000" />
     </task>
     <servers />
   </component>
