@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public static Game Instance;
-    public InputFieldHandler inputField;
+    private static Game Instance;
+    public SceneHandler sceneHandler;
+    public UI ui;
     private Player player1;
     private Player player2;
     private bool player2CharacterSelected;
@@ -26,17 +27,17 @@ public class Game : MonoBehaviour
             Instance = this;
         databaseManager = FindObjectOfType<DatabaseManager>();
         retrievedData = false;
-
     }
     void Start()
     {
-        //TODO: retrieve all information from whatever we got in our main scene and post it to database. 
         player1 = new PlayerOne();
+        player1.SetCharacter(ui.GetCharacterInfo());
+        player1.SetUserName(ui.GetUserName());
         PlayerDatabaseInput player1Input = new PlayerDatabaseInput
         {
-            username = player1.GetUserName(),
-            characterInfo = player1.GetCharacterInfo(), //TODO: make sure the character info is stored in CharacterSelect.cs 
-            playerMoveKey = PlayerMoveKey.Block, //TODO: this will not matter in this case.
+            username = ui.GetUserName(),
+            characterInfo = ui.GetCharacterInfo(), //All done 
+            playerMoveKey = PlayerMoveKey.Block, //This is a default value
             moveNum = this.moveNum //this is super important that this stays as 0
         };
         databaseManager.PostPlayer1Input(player1Input);
@@ -123,10 +124,6 @@ public class Game : MonoBehaviour
         databaseManager.GetPlayer2UserInput(OnDataReceivedForFight);
     }
     
-    //TODO: this function needs to go in UI class.
-    public void OnClickEnterUsername()
-    {
-        player1.SetUserName(inputField.ReadInput());
-    }
+
     
 }
