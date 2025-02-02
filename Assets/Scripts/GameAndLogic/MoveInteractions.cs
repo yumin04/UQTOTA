@@ -4,15 +4,23 @@ using UnityEngine.WSA;
 
 public static class MoveInteractions
 {
-
+    private static InteractionType interactionType;
     public static InteractionType HandleInteractions(MoveType p1Move, MoveType p2Move)
     {
         // This will handle when ever the move is the same, it will cancel out
         if (p1Move - p2Move == 0)
+        {
             NoEffect();
+            return interactionType;
+        }
+
         /**************** Dodge *****************/
         if (p1Move == MoveType.Dodge || p2Move == MoveType.Dodge)
+        {
             NoEffect();
+            return interactionType;
+        }
+
 
         /**************** Projectiles *****************/
         if (p1Move == MoveType.Projectile)
@@ -26,6 +34,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.Earthquake)
                 HalfAndHalf();
             Win();
+            return interactionType;
         }
 
         /**************** Throws *****************/
@@ -36,6 +45,7 @@ public static class MoveInteractions
             if(p2Move == MoveType.HardThrow)
                 NoEffect();
             Lose();
+            return interactionType;
         }
         /**************** Jump *****************/
         if (p1Move == MoveType.JumpAttack)
@@ -55,6 +65,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.Earthquake)
                 HalfAndHalf();
             Lose();
+            return interactionType;
         }
 
         /**************** Block *****************/
@@ -71,6 +82,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.SuperPunch)
                 GetStun();
             NoEffect();
+            return interactionType;
         }
 
         /**************** Punch *****************/
@@ -87,6 +99,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.Earthquake)
                 HalfAndHalf();
             Lose();
+            return interactionType;
         }
 
         /**************** Leech *****************/
@@ -106,6 +119,7 @@ public static class MoveInteractions
                 HalfAndHalf();
 
             Lose();
+            return interactionType;
         }
 
         /**************** Curse *****************/
@@ -117,6 +131,7 @@ public static class MoveInteractions
                 Win();
 
             HalfAndHalf();
+            return interactionType;
         }
 
         /**************** Earthquake *****************/
@@ -129,6 +144,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.HighJump)
                 Lose();
             HalfAndHalf();
+            return interactionType;
         }
         /**************** SuperPunch *****************/
         if (p1Move == MoveType.SuperPunch)
@@ -140,6 +156,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.HighJump)
                 Lose();
             HalfAndHalf();
+            return interactionType;
         }
         /**************** HighJump *****************/
         if (p1Move == MoveType.HighJump)
@@ -153,6 +170,7 @@ public static class MoveInteractions
             if (p2Move == MoveType.Curse)
                 HalfAndHalf();
             Win();
+            return interactionType;
         }
         /**************** HardThrow *****************/
         if (p1Move == MoveType.HighJump)
@@ -166,32 +184,33 @@ public static class MoveInteractions
             if (p2Move == MoveType.Throw)
                 NoEffect();
             Lose();
+            return interactionType;
         }
 
-        return InteractionType.Lose;
+        return interactionType;
     }
 
     private static void GetStun()
     {
-        
+        interactionType = InteractionType.Stun;
     }
     private static void NoEffect()
     {
-        
+        interactionType = InteractionType.NoEffect;
     }
 
     private static void Win()
     {
-        
+        interactionType = InteractionType.Win;
     }
 
     private static void Lose()
     {
-        
+        interactionType = InteractionType.Lose;
     }
 
     private static void HalfAndHalf()
     {
-        
+        interactionType = InteractionType.HalfAndHalf;
     }
 }

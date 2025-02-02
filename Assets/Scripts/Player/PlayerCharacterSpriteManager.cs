@@ -70,4 +70,21 @@ public class PlayerCharacterSpriteManager : MonoBehaviour
                 break;
         }
     }
+    public void Win()
+    {
+        
+    }
+    public void HalfAndHalf()
+    {
+        
+    }
+    public void Stun()
+    {
+        
+    }
+    public void NoEffect()
+    {
+        
+    }
+    
 }
