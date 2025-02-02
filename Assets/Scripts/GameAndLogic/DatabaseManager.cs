@@ -15,6 +15,16 @@ public class PlayerDatabaseInput
 
 public class DatabaseManager : MonoBehaviour
 {
+    private static DatabaseManager Instance;
+    void Awake()
+    {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
     private string serverUrl = "http://your-python-server-ip:5000/";
 
     // Fetch player data and return it through a callback

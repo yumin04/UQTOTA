@@ -6,51 +6,35 @@ using TMPro;  // Required for TextMeshPro support
 
 public class UI : MonoBehaviour
 {
+    public static UI Instance;
     //variables for username
-    public string username;
+    private string username;
     public InputFieldHandler inputField;
+    public GameObject gameInstance;
     
     // variables for character input
-    public string playerOneCharacter = null;
-    public Text playerOneText;
     private CharacterInfo selectedCharacter;
+
+
+    void Awake() {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
     public void OnClickEnterUsername()
     {
         username = inputField.ReadInput();
     }
 
     //This will get selected character by button with parameter
-    public void SelectCharacter(string characterName)
+    public void SelectCharacter(CharacterInfo characterName)
     {
         Debug.Log("SelectCharacter method called with: " + characterName);
-        
-        if (playerOneCharacter == null)
-        {
-            // playerOneCharacter = characterName;
-            // Debug.LogError("Player One reference is missing!");
-            return;
-        }
-
-        switch (characterName)
-        {
-            case "Jon":
-                selectedCharacter = CharacterInfo.Jon;
-                break;
-            case "Sandie":
-                selectedCharacter = CharacterInfo.Sandie;
-                break;
-            case "Tom":
-                selectedCharacter = CharacterInfo.Tom;
-                break;
-            default:
-                break;
-        }
-
-        if (playerOneText != null)
-        {
-            playerOneText.text = "Player One Selected:" + selectedCharacter.ToString();
-        }
-
+        selectedCharacter = characterName;
+        Debug.Log(selectedCharacter + ": selectedCharacter");
     }
 
     public string GetUserName()
@@ -63,10 +47,8 @@ public class UI : MonoBehaviour
         return selectedCharacter;
     }
 
-    public void OnClickMoveNextButton()
+    public void OnClickGameInstantiate()
     {
-        // next button that will go from character select to fight scene
-        //This will instantiate game class as an object
-        
+        Instantiate(gameInstance, transform.position, Quaternion.identity);
     }
 }

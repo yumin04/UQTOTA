@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class Character
 {
-    public Cooldown HeavyUpCooldown;
-    public Cooldown HeavyForwardCooldown;
-    public Cooldown HeavyDownCooldown;
-    public HP HealthPoints;
+    public Cooldown HeavyUpCooldown = new Cooldown();
+    public Cooldown HeavyForwardCooldown = new Cooldown();
+    public Cooldown HeavyDownCooldown = new Cooldown();
+    public HP HealthPoints = new HP();
 
     public Character(int heavyUpCooldown, int heavyForwardCooldown, int heavyDownCooldown, int healthPoint)
     {
