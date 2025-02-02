@@ -32,6 +32,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         databaseManager = FindObjectOfType<DatabaseManager>();
+        playerCharacterSpriteManager = FindObjectOfType<PlayerCharacterSpriteManager>();
         ui = FindObjectOfType<UI>();
         player1 = new PlayerOne();
         player1.SetCharacter(ui.GetCharacterInfo());
@@ -55,6 +56,7 @@ public class Game : MonoBehaviour
         {
             retrievedData = false;
             InteractionType playerInteraction = MoveInteractions.HandleInteractions(player1MoveData.x, player2MoveData.x);
+            playerCharacterSpriteManager.SetPlayerSprites(player1.GetCharacterInfo(), player2.GetCharacterInfo());
             switch (playerInteraction)
             {
                 case(InteractionType.Lose): 
