@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.Networking;
 using System.Text;
 using System;
-using UnityEngine;
-using System.Collections;
+
 [Serializable]
 public class PlayerDatabaseInput
 {
