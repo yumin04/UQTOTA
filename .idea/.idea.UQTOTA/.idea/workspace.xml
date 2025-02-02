@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2c22b78-8e40-4c09-8d24-29cd1f52afb9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UQTOTA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UQTOTA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Jon MoSCoW Sprite/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Jon MoSCoW Sprite/Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tom the Agile Sprite/Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Tom the Agile Sprite/Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FightScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FightScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameAndLogic/DatabaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameAndLogic/DatabaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCharacterSpriteManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCharacterSpriteManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameAndLogic/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameAndLogic/Game.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

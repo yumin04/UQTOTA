@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.TextCore.Text;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -46,6 +47,7 @@ public class Game : MonoBehaviour
         };
         Debug.Log("" + player1Input.username + " " + player1Input.characterInfo + " " + player1Input.playerMoveKey);
         databaseManager.PostPlayer1Input(player1Input);
+        Debug.Log("posted Player 1 input");
         player2 = new PlayerTwo();
         databaseManager.GetPlayer2UserInput(OnDataReceivedForInformation);
     }

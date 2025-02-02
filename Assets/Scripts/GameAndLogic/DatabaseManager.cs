@@ -25,7 +25,7 @@ public class DatabaseManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private string serverUrl = "http://127.0.0.1:5000/";
+    private string serverUrl = "http://172.20.64.1:5000/";
 
     // Fetch player data and return it through a callback
     public void GetPlayer2UserInput(System.Action<PlayerDatabaseInput> callback)
