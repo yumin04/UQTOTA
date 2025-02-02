@@ -71,7 +71,7 @@ public class UI : MonoBehaviour
         {
             case CharacterInfo.Jon:
                 characterDescription =
-                    "Jon MoSCoW: Jon is your average cool movie star. He’s a white guy with brown hair slicked back. He wears sunglasses all the time, and likes to rock a leather jacket over a white shirt with jeans. He also wears black Converse/Vans-esque sneakers.";
+                    "Jon MoSCoW, Action-Star: Jon is your average cool movie star. He’s a white guy with brown hair slicked back. He wears sunglasses all the time, and likes to rock a leather jacket over a white shirt with jeans. He also wears black Converse/Vans-esque sneakers.";
                 break;
             case CharacterInfo.Sandie:
                 characterDescription =
