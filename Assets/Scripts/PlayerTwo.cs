@@ -6,34 +6,25 @@ public class PlayerTwo : Player
 {
     private string dataFromDatabase;
     private PlayerMoveKey currentInput;
-    private Character character;
-    public override void GetUserInput()
+    private DatabaseManager databaseManager;
+    private PlayerDatabaseInput player2Data;
+    public bool retrievedData;
+    
+    public override PlayerMoveKey GetUserInput()
     {
+        return PlayerMoveKey.HeavyDown;
     }
 
     public override void SetUserName(string userName)
     {
-        base.SetUserName(userName);
+        base.SetUserName(player2Data.username);
     }
 
-    private void GetDataFromDatabase()
+    public bool GetRetrievedData()
     {
-        
+        return retrievedData;
     }
-
-    public override MoveData GetMoveData()
-    {
-        GetDataFromDatabase();
-        return new MoveData();
-    }
-
-    public override void SetCharacter(CharacterInfo c)
-    {
-        
-    }
-
-    public override Character GetCharacter()
-    {
-        return character;
-    }
+    // Callback function when data is received
+    
+    
 }

@@ -7,27 +7,25 @@ public class PlayerOne : Player
     private Character character;
     private PlayerMoveKey currentMove;
     private bool isReady;
+    
 
-    public override void SetCharacter(CharacterInfo c)
+    public override PlayerMoveKey GetUserInput()
     {
-        switch (c)
-        {
-            case CharacterInfo.Jon: { 
-                this.character = new JohnMoscow();
-                break;
-            }
-            case CharacterInfo.Sandie:
-            {
-                this.character = new Sandie();
-                break;
-            }
-            case CharacterInfo.Tom:
-                this.character = new Tom();
-                break;
-        }
+        return currentMove;
     }
 
-    public override void GetUserInput()
+    public PlayerMoveKey GetCurrentMove()
+    {
+        return currentMove;
+    }
+
+    public override MoveData GetMoveData(PlayerMoveKey m)
+    {
+        WaitUntilUserInputsKey();
+        return base.GetMoveData(currentMove);
+    }
+
+    private void WaitUntilUserInputsKey()
     {
         while (true)
         {
@@ -72,31 +70,6 @@ public class PlayerOne : Player
             }    
         }
     }
+    
 
-    public PlayerMoveKey GetCurrentMove()
-    {
-        return currentMove;
-    }
-
-    public override MoveData GetMoveData()
-    {
-        GetUserInput();
-        switch (currentMove)
-        {
-            case(PlayerMoveKey.LightForward): return character.ExecuteLightForward();
-            case(PlayerMoveKey.LightDown): return character.ExecuteLightDown();
-            case(PlayerMoveKey.LightUp): return character.ExecuteLightUp();
-            case(PlayerMoveKey.HeavyForward): return character.ExecuteHeavyForward();
-            case(PlayerMoveKey.HeavyDown): return character.ExecuteHeavyDown();
-            case(PlayerMoveKey.HeavyUp): return character.ExecuteHeavyUp();
-            case(PlayerMoveKey.Block): return character.ExecuteBlock();
-        }
-
-        return new MoveData();
-    }
-
-    public override Character GetCharacter()
-    {
-        return character;
-    }
 }
