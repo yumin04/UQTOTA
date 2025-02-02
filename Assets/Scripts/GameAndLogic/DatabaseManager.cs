@@ -25,7 +25,7 @@ public class DatabaseManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private string serverUrl = "http://your-python-server-ip:5000/";
+    private string serverUrl = "http://127.0.0.1:5000/";
 
     // Fetch player data and return it through a callback
     public void GetPlayer2UserInput(System.Action<PlayerDatabaseInput> callback)
@@ -35,7 +35,7 @@ public class DatabaseManager : MonoBehaviour
 
     private IEnumerator RetrieveOpponentData(System.Action<PlayerDatabaseInput> callback)
     {
-        UnityWebRequest request = UnityWebRequest.Get(serverUrl + "/get_data");
+        UnityWebRequest request = UnityWebRequest.Get(serverUrl + "/get_game_data");
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
@@ -61,7 +61,7 @@ public class DatabaseManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(player1Input); // Convert the player1Input to JSON string
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData); // Convert JSON string to byte array
 
-        UnityWebRequest request = new UnityWebRequest(serverUrl + "/post_player1_input", "POST");  // Adjust the endpoint as necessary
+        UnityWebRequest request = new UnityWebRequest(serverUrl + "/update_move_data", "POST");  // Adjust the endpoint as necessary
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");

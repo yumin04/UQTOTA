@@ -50,10 +50,10 @@ public class PlayerCharacterSpriteManager : MonoBehaviour
                 p1SpriteRenderer.sprite = characterSprites[0];
                 break;
             case CharacterInfo.Tom:
-                p1SpriteRenderer.sprite = characterSprites[0];
+                p1SpriteRenderer.sprite = characterSprites[1];
                 break;
             case CharacterInfo.Sandie:
-                p1SpriteRenderer.sprite = characterSprites[0];
+                p1SpriteRenderer.sprite = characterSprites[2];
                 break;
         }
 
@@ -63,10 +63,10 @@ public class PlayerCharacterSpriteManager : MonoBehaviour
                 p2SpriteRenderer.sprite = characterSprites[0];
                 break;
             case CharacterInfo.Tom:
-                p2SpriteRenderer.sprite = characterSprites[0];
+                p2SpriteRenderer.sprite = characterSprites[1];
                 break;
             case CharacterInfo.Sandie:
-                p2SpriteRenderer.sprite = characterSprites[0];
+                p2SpriteRenderer.sprite = characterSprites[2];
                 break;
         }
     }
