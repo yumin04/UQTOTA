@@ -50,3 +50,12 @@ public enum CharacterInfo
     Sandie
 }
 
+public enum InteractionType
+{
+    Win,
+    Lose,
+    NoEffect,
+    HalfAndHalf,
+    Stun
+}
+

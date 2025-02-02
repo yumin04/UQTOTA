@@ -53,6 +53,20 @@ public class Game : MonoBehaviour
         if (retrievedData)
         {
             retrievedData = false;
+            InteractionType playerInteraction = MoveInteractions.HandleInteractions(player1MoveData.x, player2MoveData.x);
+            /*
+             * MoveINteraction returns what effect it has between the move based on player 1
+             * Character Sprite Manager(player1Character, player2Character)
+             * player1Character.Lose()
+             * win{}
+             * NoEffect{}
+             * halfandhalf{}
+             * stun{}
+             * Then set text box for the effect
+             * characters changes sprite corresponding to that interaction
+             * HP decreases based on interaction ex: player1.DecreaseHP( player1MoveData.damage)
+             * 
+             */
             //TODO make the scene go up
             //Start a Coroutine that will make it wait for the scene to finish
             //Under Coroutine
@@ -101,8 +115,8 @@ public class Game : MonoBehaviour
         {
             if (data.moveNum == this.moveNum)
             {
-                retrievedData = true;
                 player2MoveData = player2.GetMoveData(data.playerMoveKey);
+                retrievedData = true;
             }
             else
             {

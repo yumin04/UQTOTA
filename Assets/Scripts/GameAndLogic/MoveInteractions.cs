@@ -2,10 +2,10 @@ using Unity.Mathematics;
 using UnityEditor.PackageManager.UI;
 using UnityEngine.WSA;
 
-public class MoveInteractions
+public static class MoveInteractions
 {
 
-    public void HandleInteractions(MoveType p1Move, MoveType p2Move)
+    public static InteractionType HandleInteractions(MoveType p1Move, MoveType p2Move)
     {
         // This will handle when ever the move is the same, it will cancel out
         if (p1Move - p2Move == 0)
@@ -168,28 +168,29 @@ public class MoveInteractions
             Lose();
         }
 
+        return InteractionType.Lose;
     }
 
-    private void GetStun()
+    private static void GetStun()
     {
         
     }
-    private void NoEffect()
-    {
-        
-    }
-
-    private void Win()
+    private static void NoEffect()
     {
         
     }
 
-    private void Lose()
+    private static void Win()
     {
         
     }
 
-    private void HalfAndHalf()
+    private static void Lose()
+    {
+        
+    }
+
+    private static void HalfAndHalf()
     {
         
     }
