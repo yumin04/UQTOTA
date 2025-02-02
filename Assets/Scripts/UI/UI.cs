@@ -18,7 +18,6 @@ public class UI : MonoBehaviour
     public Button infoButtonJon;
     public Button infoButtonSandie;
     public Button infoButtonTom;
-    public PlayerOne playerOne;
     public TextMeshProUGUI characterDescriptionText;
    
     public string playerOneCharacter = null;
@@ -43,11 +42,6 @@ public class UI : MonoBehaviour
         Debug.Log("SelectCharacter method called with: " + characterName);
         selectedCharacter = characterName;
         Debug.Log(selectedCharacter + ": selectedCharacter");
-        playerOne.SetCharacter(selectedCharacter);
-        
-        if (infoButtonJon) infoButtonJon.interactable = (selectedCharacter == CharacterInfo.Jon);
-        if (infoButtonSandie) infoButtonSandie.interactable = (selectedCharacter == CharacterInfo.Sandie);
-        if (infoButtonTom) infoButtonTom.interactable = (selectedCharacter == CharacterInfo.Tom);
     }
 
     public string GetUserName()
@@ -64,7 +58,7 @@ public class UI : MonoBehaviour
     {
         Instantiate(gameInstance, transform.position, Quaternion.identity);
     }
-    public void ShowCharacterInfo(string characterName)
+    public void ShowCharacterInfo()
     {
         string characterDescription = "";
         switch (selectedCharacter)
