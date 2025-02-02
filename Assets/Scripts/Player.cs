@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Player
 {
     private string userName;
+    private Character character;
+    private CharacterInfo characterInfo;
 
     public string GetUserName()
     {
@@ -15,8 +17,48 @@ public abstract class Player
     {
         this.userName = userName;
     }
-    public abstract void GetUserInput();
-    public abstract MoveData GetMoveData();
-    public abstract void SetCharacter(CharacterInfo c);
-    public abstract Character GetCharacter();
+    public abstract PlayerMoveKey GetUserInput();
+
+    public virtual MoveData GetMoveData(PlayerMoveKey m)
+    {
+        switch (m)
+        {
+            case(PlayerMoveKey.LightForward): return GetCharacter().ExecuteLightForward();
+            case(PlayerMoveKey.LightDown): return GetCharacter().ExecuteLightDown();
+            case(PlayerMoveKey.LightUp): return GetCharacter().ExecuteLightUp();
+            case(PlayerMoveKey.HeavyForward): return GetCharacter().ExecuteHeavyForward();
+            case(PlayerMoveKey.HeavyDown): return GetCharacter().ExecuteHeavyDown();
+            case(PlayerMoveKey.HeavyUp): return GetCharacter().ExecuteHeavyUp();
+            case(PlayerMoveKey.Block): return GetCharacter().ExecuteBlock();
+        }
+        return new MoveData();
+    }
+    public void SetCharacter(CharacterInfo c)
+    {
+        characterInfo = c;
+        switch (c)
+        {
+            case CharacterInfo.Jon: { 
+                this.character = new JohnMoscow();
+                break;
+            }
+            case CharacterInfo.Sandie:
+            {
+                this.character = new Sandie();
+                break;
+            }
+            case CharacterInfo.Tom:
+                this.character = new Tom();
+                break;
+        }
+    }
+    public Character GetCharacter()
+    {
+        return character;
+    }
+
+    public virtual CharacterInfo GetCharacterInfo()
+    {
+        return characterInfo;
+    }
 }
