@@ -17,6 +17,7 @@ public class Game : MonoBehaviour
     private PlayerDatabaseInput player2Data;
     public bool retrievedData;
     public bool player1SelectedMove;
+    public PlayerCharacterSpriteManager playerCharacterSpriteManager;
 
     private MoveData player1MoveData;
     private MoveData player2MoveData;
@@ -54,14 +55,28 @@ public class Game : MonoBehaviour
         {
             retrievedData = false;
             InteractionType playerInteraction = MoveInteractions.HandleInteractions(player1MoveData.x, player2MoveData.x);
+            switch (playerInteraction)
+            {
+                case(InteractionType.Lose): 
+                    playerCharacterSpriteManager.Lose();
+                    break;
+                case(InteractionType.Win):
+                    playerCharacterSpriteManager.Win();
+                    break;
+                case(InteractionType.Stun):
+                    playerCharacterSpriteManager.Stun();
+                    break;
+                case(InteractionType.HalfAndHalf):
+                    playerCharacterSpriteManager.HalfAndHalf();
+                    break;
+                case(InteractionType.NoEffect):
+                    playerCharacterSpriteManager.NoEffect();
+                    break;
+            }
+
+
+
             /*
-             * MoveINteraction returns what effect it has between the move based on player 1
-             * Character Sprite Manager(player1Character, player2Character)
-             * player1Character.Lose()
-             * win{}
-             * NoEffect{}
-             * halfandhalf{}
-             * stun{}
              * Then set text box for the effect
              * characters changes sprite corresponding to that interaction
              * HP decreases based on interaction ex: player1.DecreaseHP( player1MoveData.damage)
