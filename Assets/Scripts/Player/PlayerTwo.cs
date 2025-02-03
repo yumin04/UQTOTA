@@ -17,7 +17,7 @@ public class PlayerTwo : Player
 
     public override void SetUserName(string userName)
     {
-        base.SetUserName(player2Data.username);
+        base.SetUserName(userName);
     }
 
     public bool GetRetrievedData()

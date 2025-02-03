@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    private static Game Instance;
+    public static Game Instance;
     private UI ui;
-    private Player player1;
-    private Player player2;
+    public Player player1;
+    public Player player2;
     private bool player2CharacterSelected;
     private bool player2UsernameSelected;
     private int moveNum;
@@ -41,13 +41,12 @@ public class Game : MonoBehaviour
         PlayerDatabaseInput player1Input = new PlayerDatabaseInput
         {
             username = ui.GetUserName(),
-            characterInfo = ui.GetCharacterInfo(), //All done 
-            playerMoveKey = PlayerMoveKey.Block, //This is a default value
-            moveNum = this.moveNum //this is super important that this stays as 0
+            character_info = ui.GetCharacterInfo(), //All done 
+            player_move = PlayerMoveKey.Block, //This is a default value
+            turn_number = this.moveNum //this is super important that this stays as 0
         };
-        Debug.Log("" + player1Input.username + " " + player1Input.characterInfo + " " + player1Input.playerMoveKey);
+        Debug.Log("" + player1Input.username + " " + player1Input.character_info + " " + player1Input.player_move);
         databaseManager.PostPlayer1Input(player1Input);
-        Debug.Log("posted Player 1 input");
         player2 = new PlayerTwo();
         databaseManager.GetPlayer2UserInput(OnDataReceivedForInformation);
     }
@@ -105,9 +104,9 @@ public class Game : MonoBehaviour
         PlayerDatabaseInput player1Input = new PlayerDatabaseInput
         {
             username = player1.GetUserName(),
-            characterInfo = player1.GetCharacterInfo(),  // Assuming characterInfo is an enum, this would be its integer value
-            playerMoveKey = player1.GetUserInput(),  // Assuming playerMoveKey is an enum, this would be its integer value
-            moveNum = this.moveNum
+            character_info = player1.GetCharacterInfo(),  // Assuming characterInfo is an enum, this would be its integer value
+            player_move = player1.GetUserInput(),  // Assuming playerMoveKey is an enum, this would be its integer value
+            turn_number = this.moveNum
         };
         databaseManager.PostPlayer1Input(player1Input);
         // TODO: databaseManager.PostPlayer1Input()
@@ -117,7 +116,7 @@ public class Game : MonoBehaviour
     {
         if (data != null)
         {
-            player2.SetCharacter(data.characterInfo);
+            player2.SetCharacter(data.character_info);
             player2.SetUserName(data.username);
             retrievedData = true;
             //Change scene so it will go to the fight scene
@@ -132,9 +131,9 @@ public class Game : MonoBehaviour
     {
         if (data != null)
         {
-            if (data.moveNum == this.moveNum)
+            if (data.turn_number == this.moveNum)
             {
-                player2MoveData = player2.GetMoveData(data.playerMoveKey);
+                player2MoveData = player2.GetMoveData(data.player_move);
                 retrievedData = true;
             }
             else
